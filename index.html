@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>112-泰山高中畢業專題智慧答覆機</title>
+</head>
+
+<body>
+  <div id="circleBox">
+    <div id="circle"></div>
+  </div>
+  <!-- navbar -->
+  <nav class="top-nav">
+    <p>112泰山高中畢業專題-智慧答覆機</p>
+    <input id="menu-toggle" type="checkbox" />
+    <label class="menu-button-container" for="menu-toggle">
+      <div class="menu-button"></div>
+    </label>
+    <ul class="menu">
+      <li id="reset">清除答覆</li>
+      <li>
+        <a href="https://www.tssh.ntpc.edu.tw/home" target="_blank" rel="noreferrer noopenner">泰山高中校網</a>
+      </li>
+      <li>
+        <a href="https://www.tssh.ntpc.edu.tw/ischool/publish_page/209" target="_blank"
+          rel="noreferrer noopenner">泰山高中電子科科網</a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/profile.php?id=100064810329978" target="_blank"
+          rel="noreferrer noopenner">泰山高中電子科FaceBook</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- main -->
+  <div class="main" id="main"></div>
+  <!-- input&controllor-->
+  <div class="controllor">
+    <input type="text" id="question" placeholder="Send a message..." name="question" autocomplete="off" />
+    <button type="submit" id="send">發送</button>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
