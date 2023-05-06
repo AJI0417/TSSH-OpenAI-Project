@@ -8,7 +8,7 @@ const send = document.getElementById("send");
 const circleBox = document.getElementById("circleBox");
 const circle = document.getElementById("circle");
 
-////Button Keydown Event
+//I Keydown Event
 inputQuestion.addEventListener("keydown", e => {
   if (e.key == "Enter") {
     setTimeout(() => {
