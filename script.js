@@ -1,3 +1,4 @@
+//Declare Variable
 const form = document.getElementById("my-form");
 const answerDiv = document.getElementById("main");
 const userQuestion = document.getElementById("user-question");
