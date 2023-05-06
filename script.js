@@ -43,3 +43,8 @@ async function sendData() {
   send.disabled = false;
   inputQuestion.disabled = false;
 }
+//清除答覆
+const reset = document.getElementById("reset");
+reset.addEventListener("click", () => {
+  main.innerHTML = "";
+});
