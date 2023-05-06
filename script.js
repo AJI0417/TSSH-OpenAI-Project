@@ -1,21 +1,24 @@
+//declare variable
 const form = document.getElementById("my-form");
 const answerDiv = document.getElementById("main");
 const userQuestion = document.getElementById("user-question");
 const botAnswer = document.getElementById("bot-answer");
 const inputQuestion = document.getElementById("question");
 const send = document.getElementById("send");
-
+//Input Keydown Event
 inputQuestion.addEventListener("keydown", e => {
   if (e.key == "Enter") {
     sendData();
   }
 });
-
+//Button Click Event
 send.addEventListener("click", e => {
   sendData();
 });
 
+//Call nodeJS server API Function
 async function sendData() {
+  //Check input value empty
   inputQuestion.style.border = "0";
   if (inputQuestion.value == "") {
     inputQuestion.style.border = "1px solid #ff4346";
@@ -24,6 +27,7 @@ async function sendData() {
   const question = inputQuestion.value;
   send.disabled = true;
   inputQuestion.disabled = true;
+  //Fetch NodeJS API
   const response = await fetch("https://tssh-openai-project-server.vercel.app", {
     method: "POST",
     mode: "cors",
@@ -34,6 +38,7 @@ async function sendData() {
   });
   inputQuestion.value = "";
   const data = await response.json();
+  //Render HTML Element
   let mainDiv = document.createElement("div");
   mainDiv.className = "result";
   mainDiv.innerHTML = `
@@ -43,7 +48,7 @@ async function sendData() {
   send.disabled = false;
   inputQuestion.disabled = false;
 }
-//清除答覆
+//Clear Answer
 const reset = document.getElementById("reset");
 reset.addEventListener("click", () => {
   main.innerHTML = "";
