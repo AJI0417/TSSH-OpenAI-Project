@@ -24,7 +24,7 @@ async function sendData() {
   const question = inputQuestion.value;
   send.disabled = true;
   inputQuestion.disabled = true;
-  const response = await fetch("https://tssh-open-ai-project.vercel.app/", {
+  const response = await fetch("https://tssh-open-ai-project.vercel.app:3000", {
     method: "POST",
     mode: "cors",
     headers: {
