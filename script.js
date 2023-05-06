@@ -42,7 +42,7 @@ async function sendData() {
   const question = inputQuestion.value;
   send.disabled = true;
   inputQuestion.disabled = true;
-  const response = await fetch("http://localhost:3000/", {
+  const response = await fetch("https://tssh-openai-project-server.vercel.app", {
     method: "POST",
     mode: "cors",
     headers: {
