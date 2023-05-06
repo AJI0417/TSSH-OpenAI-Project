@@ -4,9 +4,10 @@ const userQuestion = document.getElementById("user-question");
 const botAnswer = document.getElementById("bot-answer");
 const inputQuestion = document.getElementById("question");
 const send = document.getElementById("send");
-let circleBox = document.getElementById("circleBox");
-let circle = document.getElementById("circle");
+const circleBox = document.getElementById("circleBox");
+const circle = document.getElementById("circle");
 
+////Button Keydown Event
 inputQuestion.addEventListener("keydown", e => {
   if (e.key == "Enter") {
     setTimeout(() => {
@@ -16,6 +17,7 @@ inputQuestion.addEventListener("keydown", e => {
   }
 });
 
+//Button Click Event
 send.addEventListener("click", () => {
   setTimeout(() => {
     addAnimation();
@@ -23,16 +25,19 @@ send.addEventListener("click", () => {
   sendData();
 });
 
+//Add CSS Loading Animation
 function addAnimation() {
   circleBox.classList.add("loader-container");
   circle.classList.add("loader");
 }
 
+//Remove CSS Loading Animation
 function removeAnimation() {
   circleBox.classList.remove("loader-container");
   circle.classList.remove("loader");
 }
 
+//Call nodeJS Server Function
 async function sendData() {
   inputQuestion.style.border = "0";
   if (inputQuestion.value == "") {
@@ -42,6 +47,7 @@ async function sendData() {
   const question = inputQuestion.value;
   send.disabled = true;
   inputQuestion.disabled = true;
+  //Fetch Server API
   const response = await fetch("https://tssh-openai-project-server.vercel.app", {
     method: "POST",
     mode: "cors",
@@ -54,6 +60,7 @@ async function sendData() {
   const data = await response.json();
   removeAnimation();
   //connectWebduino(data);
+  //Render HTML Element
   let mainDiv = document.createElement("div");
   mainDiv.className = "result";
   mainDiv.innerHTML = `
@@ -91,3 +98,9 @@ function connectWebduino(data) {
     }
   );
 }
+
+//Clear Answer
+const reset = document.getElementById("reset");
+reset.addEventListener("click", () => {
+  main.innerHTML = "";
+});
