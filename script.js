@@ -43,7 +43,7 @@ async function sendData() {
   mainDiv.className = "result";
   mainDiv.innerHTML = `
   <h2 id="user-message">Q: ${data.question}</h2>
-  <p class="bot-message">A: ${data.answer}</p>`;
+  <p class="bot-message"><b>A:</b> ${data.answer}</p>`;
   answerDiv.appendChild(mainDiv);
   send.disabled = false;
   inputQuestion.disabled = false;
