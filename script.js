@@ -60,7 +60,7 @@ async function sendData() {
   inputQuestion.value = "";
   const data = await response.json();
   removeAnimation();
-  //connectWebduino(data);
+  connectWebduino(data);
   //Render HTML Element
   let mainDiv = document.createElement("div");
   mainDiv.className = "result";
@@ -81,7 +81,7 @@ function connectWebduino(data) {
       board.samplingInterval = 50;
       oled = getSSD1306(board);
       oled.textSize = 1;
-      const text = data;
+      const text = data.answer.content;
       console.log("text", text);
       const segments = text.split(/[,.!]/);
       console.log("segments", segments);
@@ -92,8 +92,8 @@ function connectWebduino(data) {
         oled.print(segment.trim());
         Y += 10;
         console.log(Y);
-        if (Y > 60) {
-          Y = 60;
+        if (Y > 70) {
+          Y = 70;
         }
       });
     }
