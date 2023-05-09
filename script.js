@@ -82,9 +82,7 @@ function connectWebduino(data) {
       oled = getSSD1306(board);
       oled.textSize = 1;
       const text = data.answer.content;
-      console.log("text", text);
       const segments = text.split(/[,.!]/);
-      console.log("segments", segments);
       let Y = 0;
       segments.forEach(segment => {
         oled.cursorX = 0;
@@ -103,5 +101,5 @@ function connectWebduino(data) {
 //Clear Answer
 const reset = document.getElementById("reset");
 reset.addEventListener("click", () => {
-  main.innerHTML = "";
+  answerDiv.innerHTML = "";
 });
