@@ -13,7 +13,7 @@ inputQuestion.addEventListener("keydown", e => {
   if (e.key == "Enter") {
     setTimeout(() => {
       addAnimation();
-    }, 1000);
+    }, 500);
     sendData();
   }
 });
@@ -22,7 +22,7 @@ inputQuestion.addEventListener("keydown", e => {
 send.addEventListener("click", () => {
   setTimeout(() => {
     addAnimation();
-  }, 1000);
+  }, 500);
   sendData();
 });
 
